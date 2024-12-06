@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAIdena - AI Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+    <title>KAIdena | $KAI | First AI Agent $KDA</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #000000;
             color: #00ff00;
-            font-family: 'Courier New', monospace;
+            font-family: "Anonymous Pro", monospace;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -93,7 +98,7 @@
     <div class="container">
         <h1>KAIdena</h1>
         <div class="subtitle">AI Agent on KDA.<br>Do anything and everything</div>
-        <button class="enter-button">Enter the free world</button>
+        <a href="about.html" class="enter-button">Enter the free world</a>
     </div>
 
     <script>
@@ -109,10 +114,10 @@
         const drops = Array(Math.floor(columns)).fill(1);
 
         function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
+            ctx.fillStyle = 'rgba(0, 255, 0, 0.95)';
             ctx.font = `${fontSize}px monospace`;
 
             for (let i = 0; i < drops.length; i++) {

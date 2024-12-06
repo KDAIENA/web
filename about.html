@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About KAIdena</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px #00ff00;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #00ff00;
+            background: rgba(0, 255, 0, 0.05);
+        }
+
+        h2 {
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #00ff00;
+            text-shadow: 0 0 3px #00ff00;
+            font-weight: bold;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 255, 0, 0.1);
+            box-shadow: 0 0 20px #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="matrix-bg" id="matrix"></canvas>
+    <div class="content">
+        <h1>Welcome to the Future of AI on Kadena</h1>
+        
+        <div class="section">
+            <h2>Why Kadena?</h2>
+            <p>Kadena's revolutionary blockchain architecture provides the perfect foundation for AI agents. With its unique braided chain design, Kadena can handle thousands of transactions per second while maintaining security and decentralization. This scalability is crucial for AI agents that need to process and execute complex operations in real-time.</p>
+        </div>
+
+        <div class="section">
+            <h2>The Power of KAIdena</h2>
+            <p>KAIdena represents the convergence of cutting-edge AI technology with blockchain's most advanced scaling solution. Our AI agents leverage Kadena's Pact smart contract language, enabling secure, verifiable, and transparent AI operations. Unlike traditional AI systems, KAIdena agents are fully decentralized and accountable.</p>
+        </div>
+
+        <div class="section">
+            <h2>Technical Innovation</h2>
+            <p>Our implementation utilizes Kadena's unique features:</p>
+            <p>• <span class="highlight">Chain Braiding</span>: Parallel processing for AI operations</p>
+            <p>• <span class="highlight">Pact Smart Contracts</span>: Formal verification for AI decision-making</p>
+            <p>• <span class="highlight">Multi-chain Architecture</span>: Distributed AI processing across chains</p>
+            <p>• <span class="highlight">Scalable TPS</span>: Handling complex AI operations in real-time</p>
+        </div>
+
+        <div class="section">
+            <h2>The Vision</h2>
+            <p>We're building more than just AI agents - we're creating an ecosystem where artificial intelligence and blockchain technology converge to create truly autonomous, trustless systems. Our agents can handle everything from DeFi operations to complex data analysis, all while maintaining the security and transparency of the Kadena blockchain.</p>
+        </div>
+
+        <div class="section">
+            <h2>Join the Revolution</h2>
+            <p>KAIdena is not just another AI project - it's the foundation for a new era of decentralized intelligence. By combining Kadena's scalable infrastructure with advanced AI capabilities, we're creating agents that can operate autonomously, securely, and at scale.</p>
+        </div>
+
+        <a href="index.html" class="back-button">← Return to Gateway</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 35);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>

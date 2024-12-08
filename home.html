@@ -15,6 +15,37 @@
             overflow-x: hidden;
         }
 
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            z-index: 3;
+            border-bottom: 1px solid #00ff00;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 5px 15px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            border-color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -81,6 +112,15 @@
     </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-links">
+            <a href="home">Home</a>
+            <a href="roadmap">Roadmap</a>
+            <a href="token">$KAI</a>
+            <a href="poi">Proof of Intelligence</a>
+        </div>
+    </nav>
+
     <canvas class="matrix-bg" id="matrix"></canvas>
     <div class="content">
         <h1>Welcome to the Future of AI on Kadena</h1>

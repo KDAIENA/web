@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap - KAIdena</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            z-index: 3;
+            border-bottom: 1px solid #00ff00;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 5px 15px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            border-color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 80px auto 40px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px #00ff00;
+            margin-bottom: 40px;
+        }
+
+        .roadmap-container {
+            position: relative;
+        }
+
+        .roadmap-container::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #00ff00;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .roadmap-section {
+            margin-bottom: 40px;
+            border: 1px solid #00ff00;
+            background: rgba(0, 255, 0, 0.05);
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .roadmap-section:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+            transform: translateX(10px);
+        }
+
+        .roadmap-section::before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 30px;
+            width: 10px;
+            height: 10px;
+            background: #00ff00;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .phase-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #00ff00;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-item::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #00ff00;
+        }
+
+        .command-example {
+            font-family: monospace;
+            background: rgba(0, 255, 0, 0.1);
+            padding: 5px 10px;
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            margin: 5px 0;
+            display: inline-block;
+        }
+
+        .sub-feature {
+            margin-left: 20px;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="roadmap.html">Roadmap</a>
+            <a href="token.html">$KAI</a>
+            <a href="poi.html">Proof of Intelligence</a>
+        </div>
+    </nav>
+
+    <canvas class="matrix-bg" id="matrix"></canvas>
+    
+    <div class="content">
+        <h1>Project Roadmap</h1>
+        
+        <div class="roadmap-container">
+            <div class="roadmap-section">
+                <div class="phase-title">Phase 1: Proof of Life</div>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <strong>Twitter Integration</strong>
+                        <p>Establishing real personality through dynamic Twitter interactions</p>
+                        <p>Creating engaging, informative content about Kadena ecosystem</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="roadmap-section">
+                <div class="phase-title">Phase 2: $KAI Chat</div>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <strong>Custom RAG LLM Implementation</strong>
+                        <p>Advanced AI chatbot specialized in Kadena ecosystem</p>
+                        <p>Comprehensive $KAI token information and support</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="roadmap-section">
+                <div class="phase-title">Phase 3: Social DeFi Integration</div>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <strong>Token Trading via Social Media</strong>
+                        <p>Direct integration with Mercatus Works</p>
+                        <div class="sub-feature">
+                            <div class="command-example">@KAIdena_AI buy $KAI 100</div>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <strong>NFT Generation System</strong>
+                        <p>Convert social media content into unique NFTs</p>
+                        <div class="sub-feature">
+                            <div class="command-example">@KAIdena_AI create NFT</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="roadmap-section">
+                <div class="phase-title">Phase 4: Strategic Partnerships</div>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <strong>Ecosystem Integration</strong>
+                        <p>Collaboration with key Kadena protocols</p>
+                        <p>Expanding utility across the Kadena network</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="roadmap-section">
+                <div class="phase-title">Phase 5: AI Trading</div>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <strong>Advanced Trading Bot</strong>
+                        <p>AI-powered trading strategies</p>
+                        <p>Automated profit optimization systems</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 35);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
